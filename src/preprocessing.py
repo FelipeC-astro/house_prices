@@ -17,8 +17,8 @@ def preprocess_data(train_df, test_df, features, target):
     y = train_df[target]
     
     # Handle missing values
-    X.fillna(X.median(), inplace=True)
-    test_df[features].fillna(test_df[features].median(), inplace=True)
+    X = X.fillna(X.median())
+    test_df[features] = test_df[features].fillna(test_df[features].median())
     
     X_train, X_valid, y_train, y_valid = train_test_split(X, y, test_size=0.2, random_state=42)
     return X_train, X_valid, y_train, y_valid, test_df

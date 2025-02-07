@@ -18,5 +18,7 @@ X_train, X_valid, y_train, y_valid, test_df = preprocess_data(train_df, test_df,
 # Train and evaluate models
 best_model = train_and_evaluate(X_train, X_valid, y_train, y_valid)
 
+print("Missing values in test set after preprocessing:\n", test_df[features].isnull().sum())
+
 # Make predictions and save results
 make_predictions(best_model, test_df, features, output_path)

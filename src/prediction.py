@@ -1,3 +1,5 @@
+import pandas as pd
+
 def make_predictions(model, test_df, features, output_path):
     """
     Uses the best model to make predictions on the test set and saves results.
